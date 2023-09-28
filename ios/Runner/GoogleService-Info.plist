@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>438502949622-8k9vpfcr8dr3u5kvmlctjao7ajf1t19u.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.438502949622-8k9vpfcr8dr3u5kvmlctjao7ajf1t19u</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>438502949622-o94ldf6mse74qb4vu8flkuuhujd369h5.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCM0mOe2tZg0o6_I2-LwVcOA9dijEe1P7w</string>
+	<key>GCM_SENDER_ID</key>
+	<string>438502949622</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>site.tunckankilic.tuncchat</string>
+	<key>PROJECT_ID</key>
+	<string>tkchatfinal</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tkchatfinal.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:438502949622:ios:aa2db96d511ee9076a22d7</string>
+</dict>
+</plist>
