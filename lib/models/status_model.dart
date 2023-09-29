@@ -37,17 +37,13 @@ class Status {
       uid: map['uid'] ?? "",
       username: map['username'] ?? "",
       phoneNumber: map['phoneNumber'] ?? "",
-      photoUrl: List<String>.from(
-        map["photoUrl"],
-      ),
+      photoUrl: List<String>.from(map["photoUrl"] ?? []),
       createdAt: DateTime.fromMillisecondsSinceEpoch(
         map["createdAt"],
       ),
       profilePic: map['profilePic'] ?? "",
       statusId: map['statusId'] ?? "",
-      whoCanSee: List<String>.from(
-        (map['whoCanSee'] as List<String>),
-      ),
+      whoCanSee: List<String>.from(map['whoCanSee'] ?? []),
     );
   }
 }

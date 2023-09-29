@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tuncchat/common/utils/utils.dart';
+import 'package:tuncchat/screens/auth/controller/auth_controller.dart';
 
 class UserInformationScreen extends ConsumerStatefulWidget {
   static const String routeName = '/user-information';
@@ -21,22 +23,22 @@ class _UserInformationScreenState extends ConsumerState<UserInformationScreen> {
     nameController.dispose();
   }
 
-  // void selectImage() async {
-  //   image = await Utils.pickImageFromGallery(context);
-  //   setState(() {});
-  // }
+  void selectImage() async {
+    image = await Utils.pickImageFromGallery(context);
+    setState(() {});
+  }
 
-  // void storeUserData() async {
-  //   String name = nameController.text.trim();
+  void storeUserData() async {
+    String name = nameController.text.trim();
 
-  //   if (name.isNotEmpty) {
-  //     ref.read(authControllerProvider).saveUserDataToFirebase(
-  //           context,
-  //           name,
-  //           image,
-  //         );
-  //   }
-  // }
+    if (name.isNotEmpty) {
+      ref.read(authControllerProvider).saveUserDataToFirebase(
+            context,
+            name,
+            image,
+          );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +54,7 @@ class _UserInformationScreenState extends ConsumerState<UserInformationScreen> {
                   image == null
                       ? const CircleAvatar(
                           backgroundImage: NetworkImage(
-                              "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftr.wikipedia.org%2Fwiki%2FDosya%3APerson_icon_BLACK-01.svg&psig=AOvVaw07VSQ_qDU3FuiLjSmBgXcD&ust=1681927167292000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNDyzIyBtP4CFQAAAAAdAAAAABAE"),
+                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6my-QUDI_Rk3Y7dpugXcR4XrlB0uISM6Sc0C2KAk&s"),
                           radius: 64,
                         )
                       : CircleAvatar(
@@ -65,7 +67,7 @@ class _UserInformationScreenState extends ConsumerState<UserInformationScreen> {
                     bottom: -10,
                     left: 80,
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () => selectImage(),
                       icon: const Icon(
                         Icons.add_a_photo,
                       ),
@@ -86,7 +88,7 @@ class _UserInformationScreenState extends ConsumerState<UserInformationScreen> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () => storeUserData(),
                     icon: const Icon(
                       Icons.done,
                     ),
