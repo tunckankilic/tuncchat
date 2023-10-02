@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tuncchat/features/call/repository/call_repository.dart';
 import 'package:tuncchat/models/call_model.dart';
 import 'package:tuncchat/screens/auth/controller/auth_controller.dart';
+import 'package:tuncchat/screens/call/repository/call_repository.dart';
 import 'package:uuid/uuid.dart';
 
 final callControllerProvider = Provider((ref) {

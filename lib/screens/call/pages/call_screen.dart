@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tuncchat/common/widgets/loader.dart';
 import 'package:tuncchat/config/agora_settings.dart';
-import 'package:tuncchat/features/call/controller/call_controller.dart';
 import 'package:tuncchat/models/call_model.dart';
+import 'package:tuncchat/screens/call/controller/call_controller.dart';
 
 class CallScreen extends ConsumerStatefulWidget {
   final String channelId;

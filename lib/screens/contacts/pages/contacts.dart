@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tuncchat/common/widgets/error.dart';
 import 'package:tuncchat/common/widgets/loader.dart';
 import 'package:tuncchat/screens/contacts/controllers/contacts_controller.dart';
+import 'package:tuncchat/utils/colors.dart';
 
 class SelectContactsScreen extends ConsumerWidget {
   static const routeName = "/select-contacts";
@@ -21,21 +22,32 @@ class SelectContactsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Select Contact"),
+        iconTheme: const IconThemeData(
+          color: textColor,
+        ),
+        backgroundColor: backgroundColor,
+        title: const Text(
+          "Select Contact",
+          style: TextStyle(
+            color: textColor,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         elevation: 0,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.search,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.more_vert_outlined,
-            ),
-          ),
+        actions: const [
+          // IconButton(
+          //   onPressed: () {},
+          //   icon: const Icon(
+          //     Icons.search,
+          //   ),
+          // ),
+          // IconButton(
+          //   onPressed: () {},
+          //   icon: const Icon(
+          //     Icons.more_vert_outlined,
+          //   ),
+          // ),
         ],
       ),
       body: ref.watch(getContactsProvider).when(
@@ -56,8 +68,13 @@ class SelectContactsScreen extends ConsumerWidget {
       WidgetRef ref, Contact contact, BuildContext context) {
     return InkWell(
       onTap: () => selectContact(ref, contact, context),
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 8.0),
+      child: Container(
+        decoration: const BoxDecoration(
+          color: textColor,
+          border: Border(
+            bottom: BorderSide(color: backgroundColor, width: 2),
+          ),
+        ),
         child: ListTile(
           leading: contact.photo == null
               ? null
@@ -65,7 +82,12 @@ class SelectContactsScreen extends ConsumerWidget {
                   backgroundImage: MemoryImage(contact.photo!),
                   radius: 30,
                 ),
-          title: Text(contact.displayName),
+          title: Text(
+            contact.displayName,
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  color: backgroundColor,
+                ),
+          ),
         ),
       ),
     );

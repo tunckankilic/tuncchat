@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tuncchat/common/utils/utils.dart';
 import 'package:tuncchat/screens/auth/controller/auth_controller.dart';
@@ -25,7 +26,7 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
   @override
   void initState() {
     super.initState();
-    tabBarController = TabController(length: 2, vsync: this);
+    tabBarController = TabController(length: 1, vsync: this);
     WidgetsBinding.instance.addObserver(this);
   }
 
@@ -75,7 +76,7 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.more_vert, color: Colors.grey[900]!),
+              icon: Icon(Icons.logout_outlined, color: Colors.grey[900]!),
               onPressed: () async {
                 await FirebaseAuth.instance.signOut().then(
                       (value) => Navigator.of(context)
@@ -84,35 +85,8 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
               },
             ),
           ],
-          bottom: TabBar(
-            controller: tabBarController,
-            indicatorColor: textColor,
-            indicatorWeight: 4,
-            labelColor: textColor,
-            unselectedLabelColor: Colors.grey[900]!,
-            labelStyle: TextStyle(
-                fontWeight: FontWeight.bold, color: Colors.grey[900]!),
-            tabs: const [
-              Tab(
-                text: 'CHATS',
-              ),
-              // Tab(
-              //   text: 'STATUS',
-              // ),
-              Tab(
-                text: 'CALLS',
-              ),
-            ],
-          ),
         ),
-        body: TabBarView(
-          controller: tabBarController,
-          children: const [
-            ContactsList(),
-            // StatusContactsScreen(),
-            Text("Calls"),
-          ],
-        ),
+        body: ContactsList(),
         floatingActionButton: FloatingActionButton(
           onPressed: () async {
             if (tabBarController.index == 0) {

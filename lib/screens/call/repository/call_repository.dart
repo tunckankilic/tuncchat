@@ -5,8 +5,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tuncchat/common/utils/utils.dart';
-import 'package:tuncchat/features/call/pages/call_screen.dart';
 import 'package:tuncchat/models/call_model.dart';
+import 'package:tuncchat/screens/call/pages/call_screen.dart';
 
 final callRepositoryProvider = Provider(
   (ref) => CallRepository(

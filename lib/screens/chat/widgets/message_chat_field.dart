@@ -267,13 +267,16 @@ class _MessageChatFieldState extends ConsumerState<MessageChatField> {
                   _messageController.clear();
                 },
                 child: CircleAvatar(
-                  backgroundColor: const Color.fromRGBO(5, 96, 98, 1),
+                  backgroundColor: backgroundColor,
                   radius: 25,
-                  child: Icon(isShowSendButton
-                      ? Icons.send
-                      : isRecording
-                          ? Icons.close
-                          : Icons.mic),
+                  child: Icon(
+                    isShowSendButton
+                        ? Icons.send
+                        : isRecording
+                            ? Icons.close
+                            : Icons.mic,
+                    color: textColor,
+                  ),
                 ),
               ),
             ),
