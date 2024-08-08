@@ -27,7 +27,7 @@ class SenderMessageCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final isReplying = repliedText.isNotEmpty;
     return SwipeTo(
-      onRightSwipe: onRightSwipe,
+      onRightSwipe: (v) => onRightSwipe,
       child: Align(
         alignment: Alignment.centerLeft,
         child: ConstrainedBox(

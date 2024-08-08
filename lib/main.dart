@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tuncchat/common/widgets/error.dart';
 import 'package:tuncchat/common/widgets/loader.dart';
 import 'package:tuncchat/screens/auth/controller/auth_controller.dart';
+import 'package:tuncchat/screens/landing/landing_screen.dart';
 import 'package:tuncchat/screens/screens.dart';
 import 'package:tuncchat/utils/router.dart';
 import 'package:tuncchat/utils/utils.dart';
