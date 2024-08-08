@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ErrorScreen extends StatelessWidget {
+  static const routeName = "/error";
   final String error;
   const ErrorScreen({
     Key? key,
@@ -9,8 +10,10 @@ class ErrorScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(error),
+    return Scaffold(
+      body: Center(
+        child: Text(error),
+      ),
     );
   }
 }

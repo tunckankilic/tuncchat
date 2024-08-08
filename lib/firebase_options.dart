@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -49,9 +46,19 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyAXFwdH8l-M1tsYckLg2JFnODJ1DI3iH0A',
+    appId: '1:438502949622:web:ff7a2ea67f1be76f6a22d7',
+    messagingSenderId: '438502949622',
+    projectId: 'tkchatfinal',
+    authDomain: 'tkchatfinal.firebaseapp.com',
+    storageBucket: 'tkchatfinal.appspot.com',
+    measurementId: 'G-K4JDZEZYTW',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyD7BD_NEs0Avv2QUUoWm_ahq2LSmqjAYIA',
-    appId: '1:438502949622:android:237e9876a28e7a566a22d7',
+    appId: '1:438502949622:android:91358bdd1c6a534d6a22d7',
     messagingSenderId: '438502949622',
     projectId: 'tkchatfinal',
     storageBucket: 'tkchatfinal.appspot.com',
@@ -59,7 +66,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCM0mOe2tZg0o6_I2-LwVcOA9dijEe1P7w',
-    appId: '1:438502949622:ios:aa2db96d511ee9076a22d7',
+    appId: '1:438502949622:ios:9e881683e165483d6a22d7',
     messagingSenderId: '438502949622',
     projectId: 'tkchatfinal',
     storageBucket: 'tkchatfinal.appspot.com',
